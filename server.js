@@ -1,6 +1,7 @@
 process.env.PORT = '3000';
-process.env.MONGO_URI = 'mongodb://localhost:27017/chatapp';
+process.env.MONGO_URI = 'mongodb+srv://aidaninparis:UpsFounder1907!@chatappy.ax8cgnp.mongodb.net/?appName=chatappy';
 process.env.SESSION_SECRET = 'supersecretstring123';
+
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
@@ -31,6 +32,10 @@ io.engine.use(sessionMiddleware);
 const authRoutes = require('./routes/auth');
 app.use(authRoutes);
 
+app.get('/', (req, res) => {
+    res.redirect('/login.html');
+});
+
 io.on('connection', (socket) => {
     console.log('A user connected');
 
@@ -50,7 +55,7 @@ io.on('connection', (socket) => {
             text: data.text
         });
         io.to(data.room).emit('chat message', msg);
-        console.log(data.room)
+        console.log(data.room);
     });
 
     socket.on('disconnect', () => {
