@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Chat</title></head>
+<body>
+<h2>Chat Room</h2>
+<select id="room-select" onchange="joinRoom()">
+    <option value="general">General</option>
+    <option value="study">Study</option>
+</select>
+
+<ul id="messages"></ul>
+<input id="msg-input" placeholder="Type a message..." />
+<button onclick="sendMessage()">Send</button>
+<a href="/logout">Logout</a>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/chat.js"></script>
+</body>
+</html>
