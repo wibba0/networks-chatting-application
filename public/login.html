@@ -1,19 +1,46 @@
 <!DOCTYPE html>
-<html>
-<head><title>Login</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login – Chat</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
 <body>
-<h2>Register</h2>
-<form action="/register" method="POST">
-    <input name="username" placeholder="Username" required>
-    <input name="password" type="password" placeholder="Password" required>
-    <button type="submit">Register</button>
-</form>
+  <div class="login-wrapper">
+    <div class="login-stack">
 
-<h2>Login</h2>
-<form action="/login" method="POST">
-    <input name="username" placeholder="Username" required>
-    <input name="password" type="password" placeholder="Password" required>
-    <button type="submit">Login</button>
-</form>
+      <div class="card">
+        <h2>Register</h2>
+        <form action="/register" method="POST">
+          <div class="field">
+            <label for="reg-username">Username</label>
+            <input id="reg-username" name="username" type="text" placeholder="Choose a username" required />
+          </div>
+          <div class="field">
+            <label for="reg-password">Password</label>
+            <input id="reg-password" name="password" type="password" placeholder="Choose a password" required />
+          </div>
+          <button type="submit">Register</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+          <div class="field">
+            <label for="login-username">Username</label>
+            <input id="login-username" name="username" type="text" placeholder="Your username" required />
+          </div>
+          <div class="field">
+            <label for="login-password">Password</label>
+            <input id="login-password" name="password" type="password" placeholder="Your password" required />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
 </body>
 </html>

@@ -1,19 +1,33 @@
 <!DOCTYPE html>
-<html>
-<head><title>Chat</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
 <body>
-<h2>Chat Room</h2>
-<select id="room-select" onchange="joinRoom()">
-    <option value="general">General</option>
-    <option value="study">Study</option>
-</select>
+  <div class="chat-wrapper">
 
-<ul id="messages"></ul>
-<input id="msg-input" placeholder="Type a message..." />
-<button onclick="sendMessage()">Send</button>
-<a href="/logout">Logout</a>
+    <header class="chat-header">
+      <h2>Chat Room</h2>
+      <select id="room-select" onchange="joinRoom()">
+        <option value="general">General</option>
+        <option value="study">Study</option>
+      </select>
+      <a class="logout-link" href="/logout">Logout</a>
+    </header>
 
-<script src="/socket.io/socket.io.js"></script>
-<script src="/chat.js"></script>
+    <ul id="messages"></ul>
+
+    <div class="chat-input-bar">
+      <input id="msg-input" type="text" placeholder="Type a message…" />
+      <button class="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/chat.js"></script>
 </body>
 </html>
